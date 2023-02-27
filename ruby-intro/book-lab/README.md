@@ -1,6 +1,10 @@
 Ruby Intro
 =============
 
+This material is taken from the [GitHub repository](https://github.com/saasbook/hw-ruby-intro) for the Ruby introductory homework of the *Engineering Software as a Service* book we use for this class.
+
+Organized in three parts, it gives some basic practice in Ruby as well as getting you accustomed to making testing a regular part of your workflow. Make sure `rspec` is available in your environment (otherwise: `gem install rspec`).
+
 Learning Goals
 --------------
 
