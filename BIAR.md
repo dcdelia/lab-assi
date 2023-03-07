@@ -50,7 +50,7 @@ $ mv node-v12.0.0-linux-x64 $HOME/nodejs
 ```
 
 2. Modify the `.profile` file in your `$HOME` folder. Add the following line **before** the ones involving RVM:
-`export PATH="$PATH:$HOME/nodejs/bin"`
+`export PATH="$HOME/nodejs/bin:$PATH"`
 
 To quickly open it in an editor, you can try: `code $HOME/.profile`.
 
