@@ -10,4 +10,5 @@ Teaching assistants: Giacomo Priamo and Nicola Bottura
 ### Contents
 *Listed as: class date, enclosing folder, topic*
 - 28/02/2023 `ruby-intro/` Ruby essentials
-- 07/02/2023 `rails-intro/` Introduction to Rails
+- 07/03/2023 `rails-intro/` Introduction to Rails
+- 14/03/2023 `activerecord-practice/` ActiveRecord queries & `rails-sorted-index/` extending Index view/controller
