@@ -6,7 +6,7 @@ You will enable the user to modify how Movies are listed, sorting them by title 
 
 ## Preparation
 This RottenPotatoes app instance is a slightly polished version of the assignment we used for the previous lab.
-In particular, we generated this app using fewer packages, removed the routes related to the mailbox and Active Storage components, and used a larger collection of movies as seeds.
+In particular, we generated this app using fewer packages, removed the routes related to the mailbox and Active Storage components, and used a larger collection of movies as seeds. Detail notes on its generation are available [here](baseline.md).
 
 The app was created on the BIAR virtual machine the instructors use for the course. If you are using a different setup (at your own risk of having to make up for the differences), recall to run Bundler to make sure all the app's gems are installed. For example, you can run from the app's root directory: `bundle install --without production`.
 
