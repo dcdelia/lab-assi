@@ -15,7 +15,13 @@ biar@biar:~$ rvm use ruby-2.7.2
 Using /home/biar/.rvm/gems/ruby-2.7.2
 ```
 
-To save time, you may add this command at the end of your `.profile` file in your `$HOME` directory.
+To save time, you may add the following line at the end of your `.profile` file in your `$HOME` directory:
+
+```
+shopt -q login_shell && rvm use ruby-2.7.2
+```
+
+Which will check for a login shell before loading RVM.
 
 ### Package installation
 We install packages locally using `gem`:
