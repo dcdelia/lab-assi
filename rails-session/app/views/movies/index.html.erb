@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <% highlight_title_heading = "hilite" if !params[:sort_order].nil? and 'title' == params[:sort_order] %>
+      <th class="<%= highlight_title_heading %>">
+        <%= link_to "Title", movies_path(sort_order: :title) %>
+      </th>
+      <th>Rating</th>
+      <th>Description</th>
+      <% highlight_release_date_heading = "hilite" if !params[:sort_order].nil? and 'release_date' == params[:sort_order] %>
+      <th class="<%= highlight_release_date_heading %>">
+        <%= link_to "Release date", movies_path(sort_order: :release_date) %>
+      </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.release_date %></td>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>

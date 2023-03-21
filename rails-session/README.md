@@ -12,11 +12,7 @@ This RottenPotatoes app instance is a possible solution to the assignment from t
 
 The app was created on the BIAR virtual machine the instructors use for the course. If you are using a different setup (at your own risk of having to make up for the differences), recall to run Bundler to make sure all the app's gems are installed. For example, you can run from the app's root directory: `bundle install --without production`.
 
-For simplicity, **also this time we provide a SQLite3 DB**. Normally, you are expected to do a migration and use seeds:
-```
-bin/rake db:migrate
-bin/rake db:seed
-```
+For simplicity, also this time we provide a SQLite3 DB.
 
 Check that your app works correctly by running `bin/rails server` and open `http://localhost:3000` in your browser.
 
