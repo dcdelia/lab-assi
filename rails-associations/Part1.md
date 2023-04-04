@@ -20,7 +20,7 @@ User IDs must be unique and you should not rely for them on the identifier that 
 
 > If you mess too much with the DB and make it enter an inconsistent state, a helpful command sequence to start over is `rake db:drop db:create db:migrate`.
 
-Moving on, with the fictitious users now in the system, we should simulate the presence of an external authentication mechanism. We will add some code to `ApplicationController`, which will be inerited by all controllers. In this code, we will establish the variable `@current_user` so that controller methods and views can just look at `@current_user` without being coupled to the details of how the user was authenticated.
+Moving on, with the fictitious users now in the system, we should simulate the presence of an external authentication mechanism. We will add some code to `ApplicationController`, which will be inherited by all controllers. In this code, we will establish the variable `@current_user` so that controller methods and views can just look at `@current_user` without being coupled to the details of how the user was authenticated.
 
 Add the following code for `ApplicationController`:
 

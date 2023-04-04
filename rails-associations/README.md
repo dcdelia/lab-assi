@@ -7,7 +7,7 @@ The set of steps to cover are as follows:
 
 * [Part 1:](Part1.md) Add a `Moviegoer` model, and hard-wire a successful sign-in value to associate a valid Moviegoer ID from the DB with the current session.
 * [Part 2:](Part2.md) Add a `Review` model set up in such a way that a review belongs to a `Movie` and a `Moviegoer`.
-* [Part 3:](Part3.md) Create basic routes, controller actions, and views to allow a moviegoer to create, edit, update, or delete their reviews.
+* [Part 3:](Part3.md) Create basic routes, controller actions, and views to allow a Moviegoer to create, edit, update, or delete their reviews.
 
 ### Prerequisites
 You can start with a working RottenPotatoes instance from a previous assignment (it doesn't matter if you finished the implementation of the "filter/sort movie list" capabilities). However, this time we should run **migrations** as the DB structure will change (i.e., you should not rely on an existing DB instance).

@@ -1,10 +1,10 @@
 # 3. Create the basic CRUD actions for reviews using nested routes
 
-Now that the models are set up to represent the relationships between a `Movie`, a `MovieGoer`, and a `Review`, we need a RESTful want to refer to actions associated with movie reviews.
+Now that the models are set up to represent the relationships between a `Movie`, a `Moviegoer`, and a `Review`, we need a RESTful way to refer to actions associated with movie reviews.
 
 When creating or updating a review, how do we link it to the moviegoer and movie? Presumably, the moviegoer will be the `@current_user`, but what about the movie?
 
-It only makes sense to create a review when you have a movie in mind, therefore the most likely approach is for the "Create Review" functionality to be accessible from a button or link on the Show Movie Details page for a specfic movie.  So at the moment we display this control, we know what movie the review is going to be associated with.
+It only makes sense to create a review when you have a movie in mind, therefore the most likely approach is for the "Create Review" functionality to be accessible from a button or link on the Show Movie Details page for a specific movie.  So at the moment we display this control, we know what movie the review is going to be associated with.
 
 The question is how to get this information to the _new_ or _create_ method in the `ReviewsController`.
 
@@ -34,10 +34,13 @@ In the `ReviewsController`, we will add a before-action filter that will check f
 1.  `@current_user` is set (that is, someone is logged in and will own the new review).
 2.  The movie captured from the route as params[:movie_id] exists in the database.
 
-Add the following code to `ReviewsController`:
+Extend the code of `ReviewsController` to include:
 
 ```ruby
+# this line goes next to the existing before_action statement
 before_action :has_moviegoer_and_movie, :only => [:new, :create]
+
+# this code goes AT THE END of the file (but before the class ends...)
 protected
 def has_moviegoer_and_movie
 	unless @current_user
@@ -75,3 +78,34 @@ Add the following line to the row of buttons at the bottom of `app/views/movies/
 <%= link_to 'Review the movie', new_movie_review_path(@movie) %>
 ```
 Pressing this button should take you to the *Create Review* page.
+
+To allow RottenPotatoes to save a review, extend the `ReviewController` class to handle the POST `create` route with the data incoming from the review creation form. To this end, the code generated for method `create` via scaffolding is unaware of the identity of the `Moviegoer` and the `Movie` that the new `Review` is associated with.
+
+Therefore, we should modify the `Review` object creation code, which currently looks like:
+
+```ruby
+@review = Review.new(review_params)
+```
+
+In particular, we should retrieve the objects associated with the `:movie_id` from the route and the UID of the currently logged user. Assuming they will be respectly assigned to variables `@m` and `@mg`, we can associate them to the newly created `Review` with:
+
+```ruby
+@m.reviews << @review
+@mg.reviews << @review 
+```
+
+Also, change the redirection path in the save sequence from `review_url(@review)` into `movie_review_path(@m, @review)` to make the redirection go to the nested route.
+
+Finally, one amendment is needed in the `show.html.erb` view file for `Review`, which contains a fragment that refers to routes that are not available:
+
+```html
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>
+```
+
+Replace it with:
+```html
+<%= link_to 'Back', movies_path %>
+```
+
+You're all set! :-)
