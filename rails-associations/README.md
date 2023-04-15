@@ -1,5 +1,7 @@
 # RottenPotatoes with Associations
 
+_This assignment is based on materials **generously** provided by Prof. Armando Fox._
+
 In this assignment, you will add the ability for people to leave reviews about movies in RottenPotatoes. 
 Of course, the review has to be written by someone, and we'd like people to be able to track their reviews. While in the coming weeks we will learn how to add authentication features to a Rails app, for now we will simulate the sign-in of a user with a `session` key-value.
 

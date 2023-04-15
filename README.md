@@ -13,3 +13,5 @@ Teaching assistants: Giacomo Priamo and Nicola Bottura
 - 07/03/2023 `rails-intro/` Introduction to Rails
 - 14/03/2023 `activerecord-practice/` ActiveRecord queries & `rails-sorted-index/` extending Index view/controller
 - 21/03/2023 `rails-session/` extending Index + session settings
+- 04/04/2023 `rails-associations/` associations
+- 18/04/2023 `rails-oauth/` SSO authentication with OAuth
