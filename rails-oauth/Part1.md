@@ -3,8 +3,7 @@ In this assignment, you'll experiment with [OmniAuth](https://github.com/omniaut
 
 # 1. Set up for "Login with GitHub" using OmniAuth gem
 
-
-## How OmniAuth and SSO work
+## How OmniAuth and SSO work
 
 When you use a service like GitHub to authenticate users via SSO, your app is said to be the SSO _client_ and GitHub is said to be the SSO _provider_. Every SSO provider that uses [OAuth 2](https://oauth.net/2/) requires a minimum of three pieces of information to allow your client to use its SSO:
 
@@ -28,12 +27,22 @@ identity provider, e.g. `github`), OmniAuth will intercept the request (i.e., yo
 
 ## Set up OmniAuth
 
-Follow GitHub's [instructions](https://docs.github.com/en/apps/building-oauth-apps/creating-an-oauth-app) for adding an OAuth authorized app, using  the callback URL corresponding to the root route of your (*development*) app plus `/auth/github/callback`. Make sure you **immediately** copy the Client Secret because GitHub will not allow you to see it or retrieve it again after you leave this screen.
+Follow GitHub's [instructions](https://docs.github.com/en/apps/building-oauth-apps/creating-an-oauth-app) for adding an OAuth authorized app, using the callback URL corresponding to the root route of your (*development*) app plus `/auth/github/callback`: therefore, `http://localhost:3000/auth/github/callback`. Make sure you generate a Client Secret and then *immediately* copy it, because GitHub will not allow you to see it or retrieve it again after you leave this screen.
 
-Next, follow the instructions for `omniauth-github` to setup your app
-to intercept the above routes.  This will require you to create a `github.rb`
-file in the right place.  The code in that file will try to examine
-the values of `ENV[GITHUB_KEY]` and `ENV[GITHUB_SECRET]`, so you need
-to make these values available in the app's environment.
-If you're unfamiliar with environment variables, 
-this tutorial explains how to set up [environment variables in Rails.](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164)
+Next, follow the *Basic Usage for Rails* [instructions](https://github.com/omniauth/omniauth-github) for `omniauth-github` to set up your app to intercept the above routes. For starters, you should modify the RottenPotatoes `Gemfile` to include:
+
+```
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+```
+
+Due to recent [security policy changes](https://github.com/omniauth/omniauth/wiki/Upgrading-to-2.0), you should also add:
+
+```
+gem 'omniauth-rails_csrf_protection'
+```
+
+And then retrieve the gems for your app with `bundle install --without production`.
+
+Next, according to the instructions, create a `github.rb` file in the right place. The code in that file will try to examine the values of `ENV[GITHUB_KEY]` and `ENV[GITHUB_SECRET]`, so you need to make these values available in the app's environment. [This tutorial](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) explains how to set up environment variables in Rails.
+
+The files affected by this step are: `config/initializers/github.rb`, `Gemfile`, and `Gemfile.lock`.
