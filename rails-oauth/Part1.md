@@ -1,7 +1,4 @@
-In this assignment, you'll experiment with [OmniAuth](https://github.com/omniauth/omniauth) to allow users to use Single Sign-on (SSO) to sign in with third-party credentials, avoiding the hassle of managing passwords yourselves in your app. Youl will replace the hard-wired login mechanism for RottenPotatoes that we implemented in the past assignment on associations with a GitHub-based sign in mechanism. 
-
-
-# 1. Set up for "Login with GitHub" using OmniAuth gem
+# 1. Set up for "Login with GitHub" using the OmniAuth gem
 
 ## How OmniAuth and SSO work
 
@@ -19,15 +16,17 @@ excellent [OmniAuth gem](https://github.com/omniauth/omniauth) to handle SSO.
 In a nutshell, OmniAuth abstracts away the details of the specific API calls required to authenticate with each SSO identity provider, and replaces them with just three routes your app must support:
 
 * `GET /auth/:provider`: when a user visits this route in your app (where `:provider` is the SSO
-identity provider, e.g. `github`), OmniAuth will intercept the request (i.e., your app's controllers won't see it at all) and redirect the user to the SSO provider's login page, sending the SSO provider one or more _callback URLs_ to which the SSO provider will do a `GET` or `POST` when the user has completed login.
+identity provider, e.g., `github`), OmniAuth will intercept the request (i.e., app's controllers won't see it at all) and redirect the user to the SSO provider's login page, sending the SSO provider one or more _callback URLs_ to which the SSO provider will do a `GET` or `POST` when the user has completed login.
 
-* `(GET|POST) /auth/:provider/callback`: if the user successfully signs in via SSO, your app will receive a request to this route (which may be either a `GET` or a `POST` depending on the SSO provider). We will refer to this as the _callback URL._ You must map this route to a controller action in which you take steps to "sign the user in", whatever that means for your app. In our case, we will use the common approach of saving the user's ID in the `session[]`.  When this route is called, OmniAuth also makes available a hash called `auth_hash[]` containing (SSO provider-specific) information about the user.
+* `(GET|POST) /auth/:provider/callback`: if the user successfully signs in via SSO, your app will receive a request to this route (which may be either a `GET` or a `POST` depending on the SSO provider). We will refer to this as the **callback URL**. You must map this route to a controller action in which you take steps to "sign the user in", whatever that means for your app. In our case, we will use the common approach of saving the user's ID in the `session[]`.  When this route is called, OmniAuth also makes available a hash called `auth_hash[]` containing (SSO provider-specific) information about the user.
 
 * `GET /auth/failure`: if the user is unable to sign in via SSO (wrong password, etc.), your app will receive a request to this route. *(What is actually happening is OmniAuth receives a postback to the callback URL, but it massages the parameters into OmniAuth's standard format and then redirects to this route.)*  You must arrange to map this route to a controller action that tells the user their sign-in was unsuccessful and take appropriate actions (e.g., redirect them back to the sign-in page).
 
 ## Set up OmniAuth
 
-Follow GitHub's [instructions](https://docs.github.com/en/apps/building-oauth-apps/creating-an-oauth-app) for adding an OAuth authorized app, using the callback URL corresponding to the root route of your (*development*) app plus `/auth/github/callback`: therefore, `http://localhost:3000/auth/github/callback`. Make sure you generate a Client Secret and then *immediately* copy it, because GitHub will not allow you to see it or retrieve it again after you leave this screen.
+Follow GitHub's [instructions](https://docs.github.com/en/apps/building-oauth-apps/creating-an-oauth-app) for adding an OAuth authorized app, using the callback URL corresponding to the root route of your (*development*) app plus `/auth/github/callback`: therefore, `http://localhost:3000/auth/github/callback`.
+
+Make sure you generate a Client Secret and then *immediately* copy it, because GitHub will not allow you to see it or retrieve it again after you leave this screen.
 
 Next, follow the *Basic Usage for Rails* [instructions](https://github.com/omniauth/omniauth-github) for `omniauth-github` to set up your app to intercept the above routes. For starters, you should modify the RottenPotatoes `Gemfile` to include:
 
@@ -43,6 +42,10 @@ gem 'omniauth-rails_csrf_protection'
 
 And then retrieve the gems for your app with `bundle install --without production`.
 
-Next, according to the instructions, create a `github.rb` file in the right place. The code in that file will try to examine the values of `ENV[GITHUB_KEY]` and `ENV[GITHUB_SECRET]`, so you need to make these values available in the app's environment. [This tutorial](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) explains how to set up environment variables in Rails.
+Next, following the `omniauth-github` instructions linked above, create a `github.rb` file in the right place. The code in that file will try to examine the values of `ENV[GITHUB_KEY]` and `ENV[GITHUB_SECRET]`, so you need to make these values available in the app's environment. [This tutorial](https://blog.devgenius.io/what-are-environment-variables-in-rails-6f7e97a0b164) explains how to set up environment variables in Rails.
 
-The files affected by this step are: `config/initializers/github.rb`, `Gemfile`, and `Gemfile.lock`.
+The files affected by this setup step are: `config/initializers/github.rb`, `Gemfile`, `Gemfile.lock`.
+
+<div align="center">
+<b><a href="Part2.md">Next: Part 2 &rarr;</a></b>
+</div>
