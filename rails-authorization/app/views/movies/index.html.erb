@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+<div id ="movies">
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th>Release date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+    <!-- class adult to any table rows for movies rated other than G or PG -->
+      <tr class="<%= ('adult' unless movie.rating =~ /^G|PG$/) %>">
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.release_date %></td>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %> | <%= link_to 'Moviegoers List', moviegoers_path %>
+
+<%= javascript_pack_tag 'movie_list_filter' %>
+
+<%= javascript_pack_tag 'movie_popup' %>

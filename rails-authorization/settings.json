@@ -1,0 +1,13 @@
+{
+    "solargraph.commandPath": "bin/solargraph",
+    "solargraph.formatting": true,
+    "editor.formatOnSave": true,
+    "solargraph.diagnostics": true,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+          "path": "bash",
+          "icon": "terminal-bash",
+          "args": ["--login"]
+        }
+    }
+}

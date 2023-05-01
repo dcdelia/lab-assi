@@ -1,0 +1,898 @@
+Started GET "/" for 127.0.0.1 at 2023-05-01 23:15:45 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 3 pending migrations:
+
+20220315082820_create_movies.rb
+20220316110540_create_moviegoers.rb
+20220316110548_create_reviews.rb
+
+
+):
+  
+activerecord (6.1.5) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.5) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.5) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.5) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.5) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.5) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20220315082820)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220315082820"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMoviegoers (20220316110540)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "moviegoers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220316110540"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20220316110548)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "potatoes" integer, "comments" text, "movie_id" integer NOT NULL, "moviegoer_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_6ad75a4852"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+, CONSTRAINT "fk_rails_a6939186b9"
+FOREIGN KEY ("moviegoer_id")
+  REFERENCES "moviegoers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_moviegoer_id" ON "reviews" ("moviegoer_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220316110548"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-01 21:16:05.596154"], ["updated_at", "2023-05-01 21:16:05.596154"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-05-01 23:16:13 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.18
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered movies/index.html.erb within layouts/application (Duration: 1616.5ms | Allocations: 5013)
+  Rendered layout layouts/application.html.erb (Duration: 1616.6ms | Allocations: 5082)
+Completed 500 Internal Server Error in 1634ms (ActiveRecord: 0.1ms | Allocations: 13241)
+
+
+  
+ActionView::Template::Error (Webpacker can't find movie_list_filter.js in /Users/leonardo/Downloads/lassi-rottenpotatoes-master/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+    34: 
+    35: <%= link_to 'New Movie', new_movie_path %> | <%= link_to 'Moviegoers List', moviegoers_path %>
+    36: 
+    37: <%= javascript_pack_tag 'movie_list_filter' %>
+    38: 
+    39: <%= javascript_pack_tag 'movie_popup' %>
+  
+app/views/movies/index.html.erb:37
+Started GET "/" for 127.0.0.1 at 2023-05-01 23:18:41 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/leonardo/Downloads/lassi-rottenpotatoes-master/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+
+[Webpacker] Hash: d12fd5467db35f962d33
+Version: webpack 4.46.0
+Time: 1076ms
+Built at: 01/05/2023 23:18:43
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-9f95bec5b126fbff3a4b.js   435 KiB        application  [emitted] [immutable]  application
+      js/application-9f95bec5b126fbff3a4b.js.map   506 KiB        application  [emitted] [dev]        application
+    js/movie_list_filter-2c80935e38e96a89516a.js   315 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-2c80935e38e96a89516a.js.map   373 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-2cbe84d1dd046722f8a9.js   316 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-2cbe84d1dd046722f8a9.js.map   373 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.06 KiB                     [emitted]              
+Entrypoint application = js/application-9f95bec5b126fbff3a4b.js js/application-9f95bec5b126fbff3a4b.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-2c80935e38e96a89516a.js js/movie_list_filter-2c80935e38e96a89516a.js.map
+Entrypoint movie_popup = js/movie_popup-2cbe84d1dd046722f8a9.js js/movie_popup-2cbe84d1dd046722f8a9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 509 bytes {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 729 bytes {movie_list_filter} [built]
+[./app/javascript/packs/movie_popup.js] 1.19 KiB {movie_popup} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {movie_list_filter} {movie_popup} [built]
+    + 4 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 2349.0ms | Allocations: 7236)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2369.5ms | Allocations: 26748)
+Completed 200 OK in 2383ms (Views: 2371.5ms | ActiveRecord: 0.3ms | Allocations: 34158)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "Aladdin"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25"], ["created_at", "2023-05-01 21:19:00.839187"], ["updated_at", "2023-05-01 21:19:00.839187"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "When Harry Met Sally"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21"], ["created_at", "2023-05-01 21:19:00.841311"], ["updated_at", "2023-05-01 21:19:00.841311"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "The Help"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10"], ["created_at", "2023-05-01 21:19:00.842881"], ["updated_at", "2023-05-01 21:19:00.842881"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "Raiders of the Lost Ark"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders Of The Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12"], ["created_at", "2023-05-01 21:19:00.844465"], ["updated_at", "2023-05-01 21:19:00.844465"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Mario"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.1ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mario"], ["created_at", "2023-05-01 21:19:00.848532"], ["updated_at", "2023-05-01 21:19:00.848532"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Anna"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.1ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Anna"], ["created_at", "2023-05-01 21:19:00.850212"], ["updated_at", "2023-05-01 21:19:00.850212"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Gianni"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.2ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gianni"], ["created_at", "2023-05-01 21:19:00.854524"], ["updated_at", "2023-05-01 21:19:00.854524"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "moviegoers"[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 2], ["comments", "Some parts are boring"], ["movie_id", 2], ["moviegoer_id", 1], ["created_at", "2023-05-01 21:19:00.871729"], ["updated_at", "2023-05-01 21:19:00.871729"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 5], ["comments", "Cool!"], ["movie_id", 1], ["moviegoer_id", 2], ["created_at", "2023-05-01 21:19:00.874195"], ["updated_at", "2023-05-01 21:19:00.874195"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 3], ["comments", "Nothing to say"], ["movie_id", 2], ["moviegoer_id", 2], ["created_at", "2023-05-01 21:19:00.876328"], ["updated_at", "2023-05-01 21:19:00.876328"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["potatoes", 1], ["movie_id", 3], ["moviegoer_id", 3], ["created_at", "2023-05-01 21:19:00.878429"], ["updated_at", "2023-05-01 21:19:00.878429"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 3], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 4], ["comments", "Nice Movie!"], ["movie_id", 3], ["moviegoer_id", 1], ["created_at", "2023-05-01 21:19:00.881903"], ["updated_at", "2023-05-01 21:19:00.881903"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-05-01 23:19:06 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 9749)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 15645)
+Completed 200 OK in 32ms (Views: 22.8ms | ActiveRecord: 0.7ms | Allocations: 20584)
+
+
+Started GET "/moviegoers" for 127.0.0.1 at 2023-05-01 23:19:12 +0200
+Processing by MoviegoersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering moviegoers/index.html.erb within layouts/application
+  [1m[36mMoviegoer Load (0.7ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers"[0m
+  ↳ app/views/moviegoers/index.html.erb:6
+  Rendered moviegoers/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6380)
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 1.3ms | Allocations: 8488)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:18 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 1.2ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3789)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 5303)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2023-05-01 23:19:23 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3664)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 4595)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2023-05-01 23:19:24 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3676)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 4608)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2023-05-01 23:19:25 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3662)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 4575)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:26 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3663)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 4577)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2023-05-01 23:19:29 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 26.2ms | Allocations: 6860)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 28.0ms | Allocations: 7262)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 10855)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.2ms | Allocations: 11914)
+
+
+Started PATCH "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:37 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"Aladdin", "rating"=>"G", "description"=>"Test", "release_date(1i)"=>"1992", "release_date(2i)"=>"11", "release_date(3i)"=>"25"}, "commit"=>"Update Movie", "id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:41:in `block in update'
+  [1m[36mMovie Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) AND "movies"."id" != ? LIMIT ?[0m  [["title", "Aladdin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:41:in `block in update'
+  [1m[36mMovie Update (0.8ms)[0m  [1m[33mUPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["description", "Test"], ["updated_at", "2023-05-01 21:19:37.493736"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:41:in `block in update'
+Redirected to http://127.0.0.1:3000/movies/1
+Completed 302 Found in 19ms (ActiveRecord: 2.8ms | Allocations: 4700)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:37 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mReview Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? LIMIT ?[0m  [["movie_id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:24
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:28
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (Duration: 38.0ms | Allocations: 13618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 17129)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.7ms | Allocations: 18200)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-01 23:19:40 +0200
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 5552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 9050)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.3ms | Allocations: 9446)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:43 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3664)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 4579)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2023-05-01 23:19:48 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 3.8ms | Allocations: 2708)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2845)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6437)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 7366)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:19:50 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mReview Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? LIMIT ?[0m  [["movie_id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:24
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:28
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2222)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5815)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 1.0ms | Allocations: 6744)
+
+
+Started GET "/movies/1/reviews/new" for 127.0.0.1 at 2023-05-01 23:19:52 +0200
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:5:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers"[0m
+  ↳ app/views/reviews/new.html.erb:29:in `collect'
+  Rendered reviews/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 5618)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 7089)
+
+
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2023-05-01 23:20:03 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"potatoes"=>"4", "comments"=>"What a great movie!", "moviegoer_id"=>"2"}, "commit"=>"Add review", "movie_id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers"[0m
+  ↳ app/views/reviews/new.html.erb:29:in `collect'
+  Rendered reviews/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1625)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5150)
+Completed 422 Unprocessable Entity in 29ms (Views: 11.0ms | ActiveRecord: 1.4ms | Allocations: 11024)
+
+
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2023-05-01 23:20:24 +0200
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"potatoes"=>"4", "comments"=>"What a great movie!", "moviegoer_id"=>"1"}, "commit"=>"Add review", "movie_id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:12:in `create'
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (1.3ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 4], ["comments", "What a great movie!"], ["movie_id", 1], ["moviegoer_id", 1], ["created_at", "2023-05-01 21:20:24.449352"], ["updated_at", "2023-05-01 21:20:24.449352"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+Redirected to http://127.0.0.1:3000/movies/1
+Completed 302 Found in 27ms (ActiveRecord: 3.0ms | Allocations: 5393)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-01 23:20:24 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mReview Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? LIMIT ?[0m  [["movie_id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:24
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:28
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6469)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.6ms | Allocations: 7407)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-01 23:20:34 +0200
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 9038)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms | Allocations: 9433)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-01 23:36:30 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 9982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 30291)
+Completed 200 OK in 53ms (Views: 41.4ms | ActiveRecord: 0.6ms | Allocations: 36053)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-01 23:52:33 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/leonardo/Desktop/lab-assi/rails-devise/public/packs
+[Webpacker] Hash: 6c361bdf9bbc02470797
+Version: webpack 4.46.0
+Time: 1090ms
+Built at: 01/05/2023 23:52:36
+                                           Asset      Size             Chunks                         Chunk Names
+          js/application-4ef58cac53e79dab3aab.js   435 KiB        application  [emitted] [immutable]  application
+      js/application-4ef58cac53e79dab3aab.js.map   506 KiB        application  [emitted] [dev]        application
+    js/movie_list_filter-16deb799b52839094abc.js   315 KiB  movie_list_filter  [emitted] [immutable]  movie_list_filter
+js/movie_list_filter-16deb799b52839094abc.js.map   373 KiB  movie_list_filter  [emitted] [dev]        movie_list_filter
+          js/movie_popup-0e10f786579a25ac0cf6.js   316 KiB        movie_popup  [emitted] [immutable]  movie_popup
+      js/movie_popup-0e10f786579a25ac0cf6.js.map   373 KiB        movie_popup  [emitted] [dev]        movie_popup
+                                   manifest.json  1.06 KiB                     [emitted]              
+Entrypoint application = js/application-4ef58cac53e79dab3aab.js js/application-4ef58cac53e79dab3aab.js.map
+Entrypoint movie_list_filter = js/movie_list_filter-16deb799b52839094abc.js js/movie_list_filter-16deb799b52839094abc.js.map
+Entrypoint movie_popup = js/movie_popup-0e10f786579a25ac0cf6.js js/movie_popup-0e10f786579a25ac0cf6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 509 bytes {application} [built]
+[./app/javascript/packs/movie_list_filter.js] 729 bytes {movie_list_filter} [built]
+[./app/javascript/packs/movie_popup.js] 1.19 KiB {movie_popup} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} {movie_list_filter} {movie_popup} [built]
+    + 4 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 2412.1ms | Allocations: 10684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2439.0ms | Allocations: 30215)
+Completed 200 OK in 2459ms (Views: 2441.3ms | ActiveRecord: 0.5ms | Allocations: 35977)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230501220159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230501220159"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-05-02 00:14:44 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 9959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 15966)
+Completed 200 OK in 43ms (Views: 29.1ms | ActiveRecord: 0.8ms | Allocations: 20966)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-02 00:18:36 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 2392)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:18:36 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 632)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 10045)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.2ms | Allocations: 17403)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-05-02 00:18:43 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 222)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 150)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5881)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 7187)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-05-02 00:19:08 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "querzoni@gmail.com"], ["encrypted_password", "$2a$12$rVpqdo2qVGe8AvRio8NxZ.mEnIzr2O15qZCcYQkXW9R57O1dl1mrO"], ["created_at", "2023-05-01 22:19:09.210322"], ["updated_at", "2023-05-01 22:19:09.210322"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/movies
+Completed 303 See Other in 724ms (ActiveRecord: 1.8ms | Allocations: 11291)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-02 00:19:09 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 9463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 13130)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 16520)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-02 00:19:18 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:65:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 1.4ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3987)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 6316)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2023-05-02 00:19:26 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:65:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 13.1ms | Allocations: 5388)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5797)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 9569)
+Completed 200 OK in 30ms (Views: 21.6ms | ActiveRecord: 0.5ms | Allocations: 11728)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-02 00:19:28 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:65:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mReview Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? LIMIT ?[0m  [["movie_id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:24
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:28
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (Duration: 32.6ms | Allocations: 16260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 19933)
+Completed 200 OK in 45ms (Views: 35.5ms | ActiveRecord: 1.6ms | Allocations: 22086)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-05-02 00:19:31 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 15ms (ActiveRecord: 0.2ms | Allocations: 2192)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:19:31 +0200
+Processing by MoviesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:19:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 170)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5102)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 5688)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:20:01 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 279ms (ActiveRecord: 0.1ms | Allocations: 5164)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:20:01 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 5833)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 9498)
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 0.2ms | Allocations: 10985)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:32:46 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.18
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 864.1ms | Allocations: 10340)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 896.6ms | Allocations: 30119)
+Completed 200 OK in 931ms (Views: 901.2ms | ActiveRecord: 1.6ms | Allocations: 42516)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-05-02 00:32:50 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 29ms (ActiveRecord: 0.3ms | Allocations: 6260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:32:50 +0200
+Processing by MoviesController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:32:50 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 627)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 7539)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 9643)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:32:55 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 291ms (ActiveRecord: 0.5ms | Allocations: 5175)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:32:55 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 5839)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 9498)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 10984)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-02 00:32:58 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:65:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 2.3ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3988)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 6317)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-05-02 00:33:01 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 6ms (ActiveRecord: 0.2ms | Allocations: 1679)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 00:33:01 +0200
+Processing by MoviesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 00:33:01 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 170)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5100)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5686)
+
+

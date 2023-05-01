@@ -1,0 +1,14 @@
+bundle install
+yarn add @popperjs/core jquery bootstrap
+bin/rake webpacker:install # RISPONDERE n !!!!
+bin/rake db:migrate
+bin/rake db:seed
+EDITOR="code --wait" bin/rails credentials:edit
+
+
+Se al momento di accedere ad una pagina compare l'errore 
+"webpack has not yet re-run to reflect updates" è possibile provare 
+ad aggiornare webpack con le seguenti istruzioni sul terminale
+
+yarn add @rails/webpacker
+bundle update webpacker
