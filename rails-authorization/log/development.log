@@ -896,3 +896,385 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5686)
 
 
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRolesMaskToUsers (20230501225257)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "roles_mask" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230501225257"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 01:00:07 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 634)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 8178)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.18
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 967.5ms | Allocations: 28879)
+Completed 200 OK in 988ms (Views: 977.3ms | ActiveRecord: 0.3ms | Allocations: 39220)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-05-02 01:00:12 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 290ms (ActiveRecord: 0.7ms | Allocations: 5636)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:00:12 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:17
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 9453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 13148)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.6ms | Allocations: 16866)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:01:37 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:16
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 6136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 10068)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 12386)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-05-02 01:01:46 +0200
+Processing by MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:66:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/movie.html.erb within layouts/application
+  Rendered movies/movie.html.erb within layouts/application (Duration: 1.5ms | Allocations: 232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4020)
+Completed 200 OK in 27ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 6353)
+
+
+Started DELETE "/movies/1" for 127.0.0.1 at 2023-05-02 01:01:50 +0200
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:66:in `set_movie'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+  [1m[36mReview Destroy (0.0ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+  [1m[36mMovie Destroy (0.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:55:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 46ms (ActiveRecord: 2.1ms | Allocations: 18822)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-05-02 01:01:50 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:16
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 5656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 9325)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 10816)
+
+
+Started DELETE "/movies/2" for 127.0.0.1 at 2023-05-02 01:03:52 +0200
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:67:in `set_movie'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms | Allocations: 12116)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:03:52 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:16
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 5750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 9438)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 11041)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:05:47 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:16
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 6108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 10033)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.3ms | Allocations: 12357)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "Aladdin"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25"], ["created_at", "2023-05-01 23:06:04.269892"], ["updated_at", "2023-05-01 23:06:04.269892"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "When Harry Met Sally"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20220315082820)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220315082820"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMoviegoers (20220316110540)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "moviegoers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220316110540"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20220316110548)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "potatoes" integer, "comments" text, "movie_id" integer NOT NULL, "moviegoer_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_6ad75a4852"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+, CONSTRAINT "fk_rails_a6939186b9"
+FOREIGN KEY ("moviegoer_id")
+  REFERENCES "moviegoers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_moviegoer_id" ON "reviews" ("moviegoer_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220316110548"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20230501220159)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230501220159"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRolesMaskToUsers (20230501225257)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "roles_mask" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230501225257"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-01 23:06:17.045804"], ["updated_at", "2023-05-01 23:06:17.045804"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "Aladdin"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Aladdin"], ["rating", "G"], ["release_date", "1992-11-25"], ["created_at", "2023-05-01 23:06:21.472410"], ["updated_at", "2023-05-01 23:06:21.472410"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "When Harry Met Sally"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "When Harry Met Sally"], ["rating", "R"], ["release_date", "1989-07-21"], ["created_at", "2023-05-01 23:06:21.474351"], ["updated_at", "2023-05-01 23:06:21.474351"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "The Help"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Help"], ["rating", "PG-13"], ["release_date", "2011-08-10"], ["created_at", "2023-05-01 23:06:21.475919"], ["updated_at", "2023-05-01 23:06:21.475919"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "movies" WHERE LOWER("movies"."title") = LOWER(?) LIMIT ?[0m  [["title", "Raiders of the Lost Ark"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Raiders Of The Lost Ark"], ["rating", "PG"], ["release_date", "1981-06-12"], ["created_at", "2023-05-01 23:06:21.477527"], ["updated_at", "2023-05-01 23:06:21.477527"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Mario"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.1ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mario"], ["created_at", "2023-05-01 23:06:21.483348"], ["updated_at", "2023-05-01 23:06:21.483348"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Anna"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.1ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Anna"], ["created_at", "2023-05-01 23:06:21.488465"], ["updated_at", "2023-05-01 23:06:21.488465"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMoviegoer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "moviegoers" WHERE "moviegoers"."name" = ? LIMIT ?[0m  [["name", "Gianni"], ["LIMIT", 1]]
+  [1m[36mMoviegoer Create (0.1ms)[0m  [1m[32mINSERT INTO "moviegoers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gianni"], ["created_at", "2023-05-01 23:06:21.490036"], ["updated_at", "2023-05-01 23:06:21.490036"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "moviegoers"[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 1], ["moviegoer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 2], ["comments", "Some parts are boring"], ["movie_id", 1], ["moviegoer_id", 2], ["created_at", "2023-05-01 23:06:21.497397"], ["updated_at", "2023-05-01 23:06:21.497397"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 5], ["comments", "Cool!"], ["movie_id", 2], ["moviegoer_id", 2], ["created_at", "2023-05-01 23:06:21.499826"], ["updated_at", "2023-05-01 23:06:21.499826"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["potatoes", 3], ["comments", "Nothing to say"], ["movie_id", 2], ["moviegoer_id", 1], ["created_at", "2023-05-01 23:06:21.502073"], ["updated_at", "2023-05-01 23:06:21.502073"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 2], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 4], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "movie_id", "moviegoer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["potatoes", 1], ["movie_id", 4], ["moviegoer_id", 1], ["created_at", "2023-05-01 23:06:21.513826"], ["updated_at", "2023-05-01 23:06:21.513826"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMoviegoer Load (0.0ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."movie_id" = ? AND "reviews"."moviegoer_id" = ? LIMIT ?[0m  [["movie_id", 4], ["moviegoer_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:06:31 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.5ms | Allocations: 4257)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-05-02 01:06:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 632)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 9479)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 16303)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-05-02 01:06:36 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms | Allocations: 1575)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 170)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5099)
+Completed 200 OK in 283ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 6168)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-05-02 01:06:43 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.2ms | Allocations: 1416)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 170)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 5081)
+Completed 200 OK in 286ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5617)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-05-02 01:06:46 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 222)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 150)
+  Rendered /Users/leonardo/.rvm/gems/ruby-2.7.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5899)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 7183)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-05-02 01:07:30 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"querzoni@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "querzoni@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "querzoni@gmail.com"], ["encrypted_password", "$2a$12$PvfkFhtM1MN1Y8ndp91.5eYLCCPFdub6x7kysByeii0SSyPnslL96"], ["created_at", "2023-05-01 23:07:31.012492"], ["updated_at", "2023-05-01 23:07:31.012492"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 296ms (ActiveRecord: 1.0ms | Allocations: 9659)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-02 01:07:31 +0200
+Processing by MoviesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:16
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 9617)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 13289)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 16583)
+
+

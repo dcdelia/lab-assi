@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Movies</h1>
 <div id ="movies">
@@ -23,7 +22,7 @@
         <td><%= movie.release_date %></td>
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= if can? :destroy, movie then link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } end%></td>
       </tr>
     <% end %>
   </tbody>

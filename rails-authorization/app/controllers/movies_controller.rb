@@ -24,6 +24,7 @@ class MoviesController < ApplicationController
   # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
+    authorize! :create, @movie, :message => "BEWARE: you are not authorized to create new movies."
 
     respond_to do |format|
       if @movie.save
@@ -51,6 +52,7 @@ class MoviesController < ApplicationController
 
   # DELETE /movies/1 or /movies/1.json
   def destroy
+    authorize! :destroy, @movie, :message => "BEWARE: you are not authorized to delete movies."
     @movie.destroy
 
     respond_to do |format|
