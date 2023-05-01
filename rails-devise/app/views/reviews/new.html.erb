@@ -1,0 +1,36 @@
+<h1>Add Review to <%= @movie.title %></h1>
+
+<%= form_with model: [ @movie, @review ] do |form| %>
+
+      <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+        <ul>
+          <% @review.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :potatoes, 'Votes' %><br>
+      <%= form.select :potatoes, [1,2,3,4,5] %>
+    </div>
+
+    <div class="field">
+      <%= form.label :comments, 'Comment' %>
+      <%= form.text_area:comments %>
+    </div>
+
+    <div class="field">
+      <%= form.label :moviegoer_id, 'Moviegoer' %><br>
+      <%= form.select :moviegoer_id, @moviegoers.collect { |moviegoer| [ moviegoer.name, moviegoer.id] } %>
+
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Add review" %>
+    </div>
+  <% end %>

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @movie.rating %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @movie.release_date %>
+</p>
+
+<h2> Reviews: </h2>
+  <% if @movie.reviews.empty? %>
+    <p>No reviews for this movie...</p>
+  <% else %>
+    <ul>
+    <% @movie.reviews.each do |r| %>
+      <li> <%= r.potatoes %> -  <%= Moviegoer.find(r.moviegoer_id).name %> </li>     
+    <% end %>
+    </ul>
+  <% end %>
+
+<%= link_to 'Add Review', new_movie_review_path(@movie) %> |
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

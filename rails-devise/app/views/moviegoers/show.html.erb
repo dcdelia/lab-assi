@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Details about <%= @moviegoer.name %></h2>
+
+<h3> Movies reviewed so far </h3>
+  <% if  @moviegoer.reviews.empty? %>
+    <p> No reviews for this moviegoer... </p>
+  <% else %>
+    <ul>
+    <%  @moviegoer.movies.each do |movie|  %>
+      <li> <%= link_to movie.title, movie  %> </li>
+    <% end %>
+    </ul>
+    
+  <% end %>

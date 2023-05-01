@@ -1,0 +1,34 @@
+{
+  "application.js": "/packs/js/application-9f95bec5b126fbff3a4b.js",
+  "application.js.map": "/packs/js/application-9f95bec5b126fbff3a4b.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-9f95bec5b126fbff3a4b.js"
+      ],
+      "js.map": [
+        "/packs/js/application-9f95bec5b126fbff3a4b.js.map"
+      ]
+    },
+    "movie_list_filter": {
+      "js": [
+        "/packs/js/movie_list_filter-2c80935e38e96a89516a.js"
+      ],
+      "js.map": [
+        "/packs/js/movie_list_filter-2c80935e38e96a89516a.js.map"
+      ]
+    },
+    "movie_popup": {
+      "js": [
+        "/packs/js/movie_popup-2cbe84d1dd046722f8a9.js"
+      ],
+      "js.map": [
+        "/packs/js/movie_popup-2cbe84d1dd046722f8a9.js.map"
+      ]
+    }
+  },
+  "movie_list_filter.js": "/packs/js/movie_list_filter-2c80935e38e96a89516a.js",
+  "movie_list_filter.js.map": "/packs/js/movie_list_filter-2c80935e38e96a89516a.js.map",
+  "movie_popup.js": "/packs/js/movie_popup-2cbe84d1dd046722f8a9.js",
+  "movie_popup.js.map": "/packs/js/movie_popup-2cbe84d1dd046722f8a9.js.map"
+}
