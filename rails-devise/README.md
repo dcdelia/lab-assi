@@ -1,4 +1,4 @@
-# RottenPotatoes with Associations
+# RottenPotatoes with Authentication
 
 _This is a preliminar implementation of the RottenPotatoes Rails' App based the repositories of [Engineering Software as a Service](https://github.com/saasbook). The original code has been revised by Prof. Giovanni Farina_
 
