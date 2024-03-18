@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+ruby '2.7.2'
+
+gem 'activerecord', '~> 6'
+gem 'byebug'
+gem 'sqlite3', '~> 1.4'
+gem 'rspec', '~> 3.0'
+gem 'guard-rspec'
