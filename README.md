@@ -10,3 +10,5 @@ Teaching assistant: [Nicola Bottura](https://nicolabottura.github.io/)
 ### Contents
 *Listed as: class date, enclosing folder, topic*
 - 05/03/2024 `ruby-intro/` Ruby essentials
+- 12/03/2024 `rails-intro/` Introduction to Rails
+- 19/03/2024 `activerecord-practice/` ActiveRecord queries & `rails-sorted-index/` extending Index view/controller
