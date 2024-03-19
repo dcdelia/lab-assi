@@ -8,15 +8,17 @@ You will enable the user to modify how Movies are listed, sorting them by title 
 This RottenPotatoes app instance is a slightly polished version of the assignment we used for the previous lab.
 In particular, we generated this app using fewer packages, removed the routes related to the mailbox and Active Storage components, and used a larger collection of movies as seeds. Detail notes on its generation are available [here](baseline.md).
 
-The app was created on the BIAR virtual machine the instructors use for the course. If you are using a different setup (at your own risk of having to make up for the differences), recall to run Bundler to make sure all the app's gems are installed. For example, you can run from the app's root directory: `bundle install --without production`.
+Recall to run Bundler to make sure all the app's gems are installed. For example, run from the app's root directory:
 
-For simplicity, **this time we provide a SQLite3 DB**. Normally, you are expected to do a migration and use seeds:
 ```
-bin/rake db:migrate
-bin/rake db:seed
+bundle install
 ```
 
-**Note:** `bin/rake` and `bin/rails`, or just `rake` and `rails`?
+Or in a more refined fashion: `bundle install --without production`.
+
+**Note 1:** for simplicity, **we provide an already configured SQLite3 DB** for this app. Normally, you are expected to do a migration and use seeds (therefore: `bin/rake db:migrate` followed by  `bin/rake db:seed`).
+
+**Note 2:** `bin/rake` and `bin/rails`, or just `rake` and `rails`?
 If you're using the recommended development setup (`rvm` in the BIAR VM), then the execution path (`$PATH` in Un*x parlance) should be correctly set so that the correct version of `rake` or `rails` appears earliest in the path.
 If you're using a nonstandard development environment, or if these commands behave weirdly, saying `bin/rake` or `bin/rails` will force using the version in your Rails app's `bin/` directory. This applies also to Windows users.
 
