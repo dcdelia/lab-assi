@@ -13,6 +13,18 @@ Firstly, remove the previously created `rottenpotatoes` folder, if any. Then, th
 
 You should now be able to run `rails server` (or `bin/rails server`) without errors and connect to `http://localhost:3000`. If these instructions don't work, we recommend you to reset your VM to its initial state (hopefully, you made a snapshot). The version shown by Rails on our machine is `6.1.7.7`. Using Rails v7 or higher is **not** supported, especially for the upcoming lab sessions.
 
+To check the default Rails version and which ones are currently installed:
+```
+rails --version
+gem list rails
+```
+You can instruct the environment to run an installed version other than the default one. For example, try:
+```
+rails _6.1.7.7_ --version
+```
+
+
+
 ### Windows Subsystem for Linux (unsupported)
 Students using WSL/WSL2 (which, we remind you, is *not* an officially supported environment for this course) experienced issues with the `timeout` package being missing. Some could solve them by doing:
 1. `gem install --default bundler`
